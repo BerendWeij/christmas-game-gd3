@@ -23,6 +23,11 @@ AFRAME.registerComponent('weapon', {
         const spawnPosition = this.camera.object3D.position.clone();
         direction.multiplyScalar(-1);
 
+        const startPosition = direction.clone();
+        startPosition.multiplyScalar(2);
+        spawnPosition.add(startPosition);
+        spawnPosition.y -= 0.2;
+
         const duration = shootPower * this.powerToMS;
 
         entityFactory.create('snowBall', spawnPosition, direction, duration);

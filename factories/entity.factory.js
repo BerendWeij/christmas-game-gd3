@@ -5,7 +5,7 @@ class EntityFactory {
     }
 
     create(type = 'snowBall', position, velocity, duration){
-        const speed = 0.3;
+        const speed = 0.5;
         velocity.multiplyScalar(speed);
 
         const newEntity = document.createElement('a-sphere');

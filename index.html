@@ -5,6 +5,7 @@
     <script src="factories/entity.factory.js" defer></script>
     <script src="util/this.utils.js"></script>
     <script src="systems/score.system.js"></script>
+    <script src="systems/spawn.system.js"></script>
     <script src="components/clickemitter.component.js"></script>
     <script src="components/weapon.component.js"></script>
     <script src="components/velocity.component.js"></script>
@@ -14,17 +15,18 @@
 <a-scene
         background="color:black;"
         score
+        spawn
 >
     <a-camera
             wasd-controls-enabled="true"
             cursor="rayOrigin: mouse"
     >
-        <a-box
-                position="0 -0.69 -2.24"
-                clickemitter="event:shoot;"
-                weapon
-        ></a-box>
+        <a-gltf-model src="assets/grenade_launcher/scene.gltf" position="3.86 -0.22693 -0.08962" clickemitter="event: shoot" weapon="" gltf-model="assets/grenade_launcher/scene.gltf" scale="0.1 0.1 0.1" rotation="0 270 0"></a-gltf-model>
     </a-camera>
+    <a-gltf-model src="assets/merry_christmas/scene.gltf" gltf-model="assets/merry_christmas/scene.gltf" scale="0.01 0.01 0.01" position="-6.59 0 -14.12"></a-gltf-model>
+    <a-gltf-model src="assets/merry_christmas/scene.gltf" gltf-model="assets/merry_christmas/scene.gltf" scale="0.01 0.01 0.01" position="-17.79084 0 5.03315" rotation="0 50 0"></a-gltf-model>
+    <a-gltf-model src="assets/merry_christmas/scene.gltf" gltf-model="assets/merry_christmas/scene.gltf" scale="0.01 0.01 0.01" position="11.45946 0 7.29672" rotation="0 187.74 0"></a-gltf-model>
+    <a-plane color="white" geometry="height: 200; width: 200" rotation="270 0 0"></a-plane>
     <a-sky src="assets/stars.jpg"></a-sky>
 </a-scene>
 </body>
