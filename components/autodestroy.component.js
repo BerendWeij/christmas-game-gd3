@@ -4,13 +4,13 @@ AFRAME.registerComponent('autodestroy', {
     },
 
     init() {
-        bind(this, this.onDestroy);
+        bind(this, this.onNewEntity);
 
         const {delay} = this.data;
-        setTimeout(this.onDestroy, delay);
+        setTimeout(this.onNewEntity, delay);
     },
 
-    onDestroy(){
+    onNewEntity(){
         this.el.emit('destroyed', this.el);
         this.el.parentNode.removeChild(this.el);
     }

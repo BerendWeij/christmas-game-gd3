@@ -5,15 +5,19 @@ class EntityFactory {
     }
 
     create(type = 'snowBall', position, velocity, duration){
-        const speed = 0.5;
+        const speed = 0.2;
         velocity.multiplyScalar(speed);
 
-        const newEntity = document.createElement('a-sphere');
-        newEntity.setAttribute("radius", 0.15);
-        newEntity.setAttribute("position", `${position.x} ${position.y} ${position.z}`);
-        newEntity.setAttribute("velocity", `velocity:${velocity.x} ${velocity.y} ${velocity.z}`);
-        newEntity.setAttribute("autodestroy", `delay:${duration};`);
-        this.scene.appendChild(newEntity);
+        const newSnowball = document.createElement('a-sphere');
+        newSnowball.setAttribute("radius", 0.15);
+        newSnowball.setAttribute("position", `${position.x} ${position.y} ${position.z}`);
+        newSnowball.setAttribute("velocity", `velocity:${velocity.x} ${velocity.y} ${velocity.z}`);
+        newSnowball.setAttribute("autodestroy", `delay:${duration};`);
+        newSnowball.type = "snowball";
+
+        this.scene.emit("newEntitySpawned", newSnowball);
+
+        this.scene.appendChild(newSnowball);
 
     }
 

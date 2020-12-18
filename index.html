@@ -3,9 +3,13 @@
     <title>Christmas game GD3</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="factories/entity.factory.js" defer></script>
+    <script src="factories/enemy.factory.js" defer></script>
     <script src="util/this.utils.js"></script>
+    <script src="util/math.utils.js"></script>
     <script src="systems/score.system.js"></script>
     <script src="systems/spawn.system.js"></script>
+    <script src="systems/collision.system.js"></script>
+    <script src="systems/health.system.js"></script>
     <script src="components/clickemitter.component.js"></script>
     <script src="components/weapon.component.js"></script>
     <script src="components/velocity.component.js"></script>
@@ -15,6 +19,7 @@
 <a-scene
         background="color:black;"
         score
+        health
         spawn
 >
     <a-camera
@@ -26,6 +31,7 @@
     <a-gltf-model src="assets/merry_christmas/scene.gltf" gltf-model="assets/merry_christmas/scene.gltf" scale="0.01 0.01 0.01" position="-6.59 0 -14.12"></a-gltf-model>
     <a-gltf-model src="assets/merry_christmas/scene.gltf" gltf-model="assets/merry_christmas/scene.gltf" scale="0.01 0.01 0.01" position="-17.79084 0 5.03315" rotation="0 50 0"></a-gltf-model>
     <a-gltf-model src="assets/merry_christmas/scene.gltf" gltf-model="assets/merry_christmas/scene.gltf" scale="0.01 0.01 0.01" position="11.45946 0 7.29672" rotation="0 187.74 0"></a-gltf-model>
+
     <a-plane color="white" geometry="height: 200; width: 200" rotation="270 0 0"></a-plane>
     <a-sky src="assets/stars.jpg"></a-sky>
 </a-scene>
